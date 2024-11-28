@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4 md:pl-4">
             <h3 className="text-xl font-semibold mb-4">Företagsinformation</h3>
-            <p>Passaparola AB</p>
+            <p>Passaparola AB - Innehar F-skattesedel</p>
             <p>
               <a 
                 href="tel:0721571439" 
