@@ -2,7 +2,6 @@ import React from 'react';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import Hero from './components/Hero';
 import About from './components/About';
-import Gallery from './components/Gallery';
 import Services from './components/Services';
 import Testimonials from './components/Testimonials';
 import ContactForm from './components/ContactForm';
@@ -18,9 +17,6 @@ function App() {
         </ErrorBoundary>
         <ErrorBoundary>
           <About />
-        </ErrorBoundary>
-        <ErrorBoundary>
-          <Gallery />
         </ErrorBoundary>
         <ErrorBoundary>
           <Services />
