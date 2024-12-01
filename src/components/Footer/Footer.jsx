@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import CompanyInfo from './CompanyInfo';
 import SocialLinks from './SocialLinks';
 import Copyright from './Copyright';
