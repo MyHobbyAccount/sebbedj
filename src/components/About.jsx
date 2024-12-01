@@ -23,14 +23,14 @@ const About = () => {
             </h2>
             <div className="space-y-4 text-custom-gray-600">
               <p>
-                Välkommen till en värld där musiken sätter stämningen och varje fest blir unik! Jag är DJ Sebbe – en engagerad och erfaren underhållare som brinner för att skapa oförglömliga stunder på dansgolvet.
+                Välkommen till en värld där musiken sätter stämningen och varje fest blir unik! Jag är sebbedj – en engagerad och erfaren underhållare som brinner för att skapa oförglömliga stunder på dansgolvet. Jag utgår några mil söder om Växjö och kan enkelt ta mig runt i södra Sverige.
 
                 Med en naturlig känsla för att läsa av publiken och en bred musikalisk repertoar levererar jag precis det som behövs för att din kväll ska bli magisk. Oavsett om det handlar om att sätta takten på ett bröllop, arrangera ett skräddarsytt musikquiz, eller skapa en kväll full av energi och glädje, så är mitt mål att ge dig och dina gäster en upplevelse ni sent kommer glömma.
               </p>
               <p>
-                Som DJ är jag inte bara där för att spela musik; jag är där för att skapa minnen. Jag börjar alltid med att lyssna på dina önskemål och planerar musiken utifrån din vision. Vill du ha ett musikquiz som en härlig isbrytare innan dansen? Eller kanske en blandning av era favoritlåtar och dansgolvets största hits? Jag löser det!
+                Som DJ är jag inte bara där för att spela musik; jag är där för att skapa minnen. Jag börjar alltid med att lyssna på dina önskemål och planerar musiken utifrån din vision. Vill du ha ett musikquiz för att bygga upp feststämning innan dansen? Eller kanske en blandning av era favoritlåtar och dansgolvets största hits? Jag löser det!
 
-                Så oavsett om du planerar ett bröllop, en jubileumsfest, eller en firmafest – låt mig hjälpa dig göra din tillställning till något alldeles extra.
+                Så oavsett om du planerar ett bröllop, en privatfest, eller en firmafest – låt mig hjälpa dig göra din tillställning till något alldeles extra.
 
                 Kontakta mig idag så ser vi till att din fest blir en succé!
               </p>
