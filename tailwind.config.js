@@ -7,33 +7,32 @@ export default {
   theme: {
     extend: {
       colors: {
-        'custom-gray': {
-          50: '#f9fafb',
-          100: '#f3f4f6',
-          200: '#e5e7eb',
-          300: '#d1d5db',
-          400: '#9ca3af',
-          500: '#6b7280',
-          600: '#4b5563',
-          700: '#374151',
-          800: '#1f2937',
-          900: '#111827',
+        'neon': {
+          pink: '#ff0080',
+          purple: '#bc13fe',
+          blue: '#0000ff',
         },
-        'accent': {
-          light: '#FFD700',
-          DEFAULT: '#FFC107',
-          dark: '#FFA000',
+        'party': {
+          dark: '#000000',
+          light: '#ffffff',
+          accent: '#7928ca',
         },
       },
       fontFamily: {
-        'sans': ['Montserrat', 'system-ui', 'sans-serif'],
-        'display': ['Playfair Display', 'serif'],
+        'sans': ['Poppins', 'system-ui', 'sans-serif'],
+        'display': ['Space Grotesk', 'sans-serif'],
       },
       animation: {
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'float 3s ease-in-out infinite',
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-party': 'linear-gradient(45deg, #ff0080, #7928ca, #ff0080)',
+        'gradient-dark': 'linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.95))',
+      },
+      boxShadow: {
+        'neon': '0 0 30px rgba(188, 19, 254, 0.3)',
+        'glow': '0 0 20px rgba(255, 0, 128, 0.5)',
       },
     },
   },
