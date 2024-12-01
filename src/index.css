@@ -21,44 +21,64 @@
   justify-content: center;
 }
 
-/* Neon effects - reduced intensity */
-.neon-text {
-  text-shadow: 0 0 5px #fff,
-               0 0 7px #fff,
-               0 0 15px #bc13fe,
-               0 0 30px #bc13fe,
-               0 0 40px #bc13fe;
-  animation: neon 2s ease-in-out infinite alternate;
+/* Subtle header glow */
+.section-header {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(188, 19, 254, 0.3);
+  position: relative;
 }
 
-@keyframes neon {
-  from {
-    text-shadow: 0 0 5px #fff,
-                 0 0 7px #fff,
-                 0 0 15px #bc13fe,
-                 0 0 30px #bc13fe,
-                 0 0 40px #bc13fe;
-  }
-  to {
-    text-shadow: 0 0 3px #fff,
-                 0 0 5px #fff,
-                 0 0 10px #bc13fe,
-                 0 0 25px #bc13fe,
-                 0 0 35px #bc13fe;
-  }
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #bc13fe, transparent);
+}
+
+/* Neon box effect */
+.neon-box {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(188, 19, 254, 0.3);
+  box-shadow: 0 0 20px rgba(188, 19, 254, 0.2);
+  transition: all 0.3s ease;
+}
+
+.neon-box:hover {
+  box-shadow: 0 0 30px rgba(188, 19, 254, 0.4);
+}
+
+/* Glow image effect */
+.glow-image {
+  background: radial-gradient(circle at center, rgba(188, 19, 254, 0.2), transparent 70%);
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
 /* Animated background */
-.party-bg {
-  background: linear-gradient(45deg, #ff0080, #7928ca, #ff0080);
-  background-size: 200% 200%;
-  animation: gradientBG 10s ease infinite;
+.animated-bg {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.animated-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(188, 19, 254, 0.1), transparent 60%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
 }
 
 /* Glass morphism */
