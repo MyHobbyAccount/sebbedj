@@ -1,16 +1,16 @@
 import React from 'react';
 import { ErrorBoundary } from './components/ErrorBoundary';
-import Hero from './components/Hero/Hero';
-import About from './components/About/About';
-import Services from './components/Services/Services';
-import Testimonials from './components/Testimonials/Testimonials';
-import ContactForm from './components/Contact/ContactForm';
-import Venues from './components/Venues/Venues';
+import Hero from './components/Hero';
+import About from './components/About';
+import Services from './components/Services';
+import Testimonials from './components/Testimonials';
+import ContactForm from './components/ContactForm';
+import Venues from './components/Venues';
 import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <div className="bg-[#0a0a0a] text-white">
+    <div className="bg-custom-gray-100 text-custom-gray-900">
       <main>
         <ErrorBoundary>
           <Hero />
