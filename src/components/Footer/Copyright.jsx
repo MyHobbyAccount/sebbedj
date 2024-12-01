@@ -1,23 +1,34 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Copyright = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
-      <p>© {currentYear} Passaparola AB. All rights reserved.</p>
-      <p className="mt-2">
-        Created by{' '}
-        <a
-          href="https://sebbedj.se"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-gray-300 transition-colors"
-        >
-          Sebastian Bocaciu
-        </a>
-      </p>
-    </div>
+    <motion.div 
+      className="mt-12 pt-8 border-t border-gray-800"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="text-center">
+        <p className="text-gray-500">
+          © {currentYear} Passaparola AB. All rights reserved.
+        </p>
+        <p className="mt-2 text-gray-600">
+          Created by{' '}
+          <a
+            href="https://sebbedj.se"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-neon-pink hover:text-neon-purple transition-colors"
+          >
+            Sebastian Bocaciu
+          </a>
+        </p>
+      </div>
+    </motion.div>
   );
 };
 
