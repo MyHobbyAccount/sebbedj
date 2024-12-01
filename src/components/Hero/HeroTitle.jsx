@@ -10,7 +10,7 @@ const HeroTitle = () => {
         Skapar Oförglömliga Stunder Genom Musik
       </p>
       <p className="text-xl mb-12 text-white max-w-2xl mx-auto opacity-90">
-        Professionell Bröllops- & Event-DJ i Sverige
+        Professionell Bröllops- & Event-DJ i Södra Sverige
       </p>
     </div>
   );
