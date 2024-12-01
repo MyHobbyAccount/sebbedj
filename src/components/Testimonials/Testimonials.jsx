@@ -24,7 +24,7 @@ const Testimonials = () => {
   return (
     <section className="section-height animated-bg py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 neon-text">
+        <h2 className="text-4xl font-bold text-center mb-12 section-header">
           Vad Andra Säger
         </h2>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -39,7 +39,7 @@ const Testimonials = () => {
               <p className="text-lg text-white opacity-90 italic">
                 ✨ "{testimonial.text}"
               </p>
-              <p className="text-pink-500 mt-2 neon-text-blue">
+              <p className="text-pink-500 mt-2">
                 – {testimonial.event}
               </p>
             </motion.div>
