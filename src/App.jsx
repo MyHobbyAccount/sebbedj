@@ -1,12 +1,12 @@
 import React from 'react';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import Hero from './components/Hero';
-import About from './components/About';
+import About from './components/About/About';
 import Services from './components/Services';
 import Testimonials from './components/Testimonials';
 import ContactForm from './components/ContactForm';
 import Venues from './components/Venues';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Footer';
 
 function App() {
   return (
