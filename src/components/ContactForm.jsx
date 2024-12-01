@@ -24,7 +24,7 @@ const ContactForm = () => {
     <section id="contact" className="section-height bg-custom-gray-100 py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-custom-gray-900">
-          Kontakta Oss
+          Kontakta mig
         </h2>
         <div className="max-w-2xl mx-auto bg-black text-white p-8 rounded-lg">
           <form onSubmit={handleSubmit} className="space-y-6">
