@@ -25,12 +25,12 @@ const Venues = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-custom-gray-50 to-custom-gray-100 py-8">
+    <section className="bg-gradient-dark py-8">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center mb-4">
-            <FaMapMarkerAlt className="text-2xl text-custom-gray-600 mr-3" />
-            <h2 className="text-3xl font-bold text-custom-gray-900">
+            <FaMapMarkerAlt className="text-2xl text-neon-pink mr-3" />
+            <h2 className="text-3xl font-bold text-white neon-text">
               Ett utdrag av fantastiska ställen där jag spelat
             </h2>
           </div>
@@ -38,9 +38,9 @@ const Venues = () => {
             {venues.map((venue, index) => (
               <div
                 key={index}
-                className="bg-white px-3 py-1 rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
+                className="venue-tag glass px-3 py-1 rounded-full"
               >
-                <p className="text-custom-gray-700 text-sm font-medium">{venue}</p>
+                <p className="text-white text-sm font-medium">{venue}</p>
               </div>
             ))}
           </div>
