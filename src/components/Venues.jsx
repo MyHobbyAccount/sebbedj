@@ -20,7 +20,8 @@ const Venues = () => {
     "Asa Herrgård",
     "Varbergs Fästning",
     "Råda Säteri",
-    "O´learys"
+    "O´learys",
+    "Många fler..."
   ];
 
   return (
@@ -30,7 +31,7 @@ const Venues = () => {
           <div className="flex items-center justify-center mb-4">
             <FaMapMarkerAlt className="text-2xl text-custom-gray-600 mr-3" />
             <h2 className="text-3xl font-bold text-custom-gray-900">
-              Tidigare Spelningar
+              Ett utdrag av fantastiska ställen där jag spelat
             </h2>
           </div>
           <div className="flex flex-wrap justify-center gap-2">
