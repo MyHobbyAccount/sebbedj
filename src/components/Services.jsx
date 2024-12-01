@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import ServiceDetails from './ServiceDetails';
 import ContactPopup from './ContactPopup';
 
@@ -52,7 +53,7 @@ const Services = () => {
         "1 timma interaktivt musikquiz",
         "Professionellt ljudsystem",
         "Underhållande kategorier",
-        "Jag använder mig av Er TV-skärm",
+        "Jag använder mig av Er TV-skärm"
       ],
       details: "En engagerande och interaktiv musikquiz-upplevelse perfekt för företagsevenemang, teambuilding eller privata fester. Jag använder befintligt bild-lösning. 4 mil resa ingår."
     },
@@ -75,37 +76,70 @@ const Services = () => {
     setIsContactOpen(true);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
-    <section className="section-height bg-custom-gray-50 py-20">
+    <section className="section-height bg-gradient-dark py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-custom-gray-900">Våra Tjänster</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-12 text-white neon-text">
+          Våra Tjänster
+        </h2>
+        <motion.div 
+          className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {services.map((service, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-lg flex flex-col">
+            <motion.div 
+              key={index}
+              variants={cardVariants}
+              className="glass rounded-lg p-6 shadow-neon hover:shadow-glow transition-all duration-500"
+            >
               <div className="flex-grow">
-                <h3 className="text-2xl font-semibold mb-4 text-custom-gray-900">{service.title}</h3>
-                <p className="text-xl mb-6 text-custom-gray-700">{service.price}</p>
-                <ul className="mb-6 space-y-2">
+                <h3 className="text-2xl font-semibold mb-4 text-white">{service.title}</h3>
+                <p className="text-xl mb-6 text-neon-pink font-display">{service.price}</p>
+                <ul className="mb-6 space-y-3">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-custom-gray-600">
-                      <span className="mr-2">•</span>
+                    <li key={idx} className="flex items-center text-gray-300">
+                      <span className="mr-2 text-neon-purple">•</span>
                       {feature}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-4 mt-auto">
                 <ServiceDetails service={service} />
                 <button
                   onClick={() => handleBookNow(service)}
-                  className="w-full bg-custom-gray-800 text-white px-6 py-2 rounded-lg hover:bg-custom-gray-700 transition-colors"
+                  className="w-full bg-gradient-to-r from-neon-pink to-neon-purple text-white px-6 py-3 rounded-lg hover:shadow-neon transition-all duration-300 transform hover:-translate-y-1"
                 >
                   Boka Nu
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
       <ContactPopup
         isOpen={isContactOpen}
