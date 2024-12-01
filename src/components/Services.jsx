@@ -9,24 +9,26 @@ const Services = () => {
   const services = [
     {
       title: "Bröllops-DJ Paket 1",
-      price: "10,000 SEK incl. tax",
+      price: "10,000 SEK inkl moms",
       features: [
-        "DJ-tjänster under festen",
+        "DJ enbart under bröllopsfesten",
         "Tillgång till lokalen under middagen",
-        "Professionellt ljudsystem",
-        "Ljussättning",
-        "Konsultationsmöte"
+        "Ljudsystem i världsklass",
+        "Disco kula",
+        "Moving heads & miljöbelysning",
+        "1 timma konsultationsmöte"
       ],
-      details: "Perfekt för lokaler där DJ:n kan rigga under middagen. Inkluderar omfattande ljud- och ljusuppsättning, musikplanering och professionella DJ-tjänster under hela festen."
+      details: "Perfekt för lokaler där DJ:n kan rigga under under tiden som bröllopsmiddagen pågår (I en separat lokal). Något billigare pris när ni bara vill ha DJ till festen. Inkluderar omfattande ljud- och ljusuppsättning, musikplanering och en helkväll fylld med dans. Jag spelar så länge som ni orkar!. Milersättning tillkommer med 25 SEK/mil."
     },
     {
       title: "Bröllops-DJ Paket 2",
-      price: "13,000 SEK incl. tax",
+      price: "13,000 SEK inkl moms",
       features: [
         "DJ-tjänster under middag och fest",
         "Samma lokal hela kvällen",
-        "Förstärkt ljudsystem",
-        "Premium ljuspaket",
+        "Ljudsystem i världsklass",
+        "Disco kula",
+        "Moving heads & miljöbelysning",
         "Flera konsultationsmöten"
       ],
       details: "Idealiskt för evenemang där middag och fest är i samma lokal. Inkluderar förstärkt ljud- och ljusuppsättning, flera planeringsmöten och sömlös musik under både middag och fest."
@@ -45,15 +47,14 @@ const Services = () => {
     },
     {
       title: "Musikquiz",
-      price: "8,000 SEK incl. tax",
+      price: "5,000 SEK inkl moms",
       features: [
-        "2 timmars interaktivt musikquiz",
+        "1 timma interaktivt musikquiz",
         "Professionellt ljudsystem",
-        "Anpassade kategorier",
-        "Digitalt poängsystem",
-        "Prisutdelning"
+        "Underhållande kategorier",
+        "Jag använder mig av Er TV-skärm",
       ],
-      details: "En engagerande och interaktiv musikquiz-upplevelse perfekt för företagsevenemang, teambuilding eller privata fester. Inkluderar anpassade musikkategorier, professionell värdskap, toppmodernt ljudsystem och digital poängräkning för en sömlös upplevelse."
+      details: "En engagerande och interaktiv musikquiz-upplevelse perfekt för företagsevenemang, teambuilding eller privata fester. Jag använder befintligt bild-lösning. 4 mil resa ingår."
     },
     {
       title: "Skräddarsytt Paket",
