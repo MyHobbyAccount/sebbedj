@@ -1,27 +1,56 @@
 import React from 'react';
+import { FaPhone, FaEnvelope } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const CompanyInfo = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
-    <div className="space-y-4 md:pl-4">
-      <h3 className="text-xl font-semibold mb-4">Företagsinformation</h3>
-      <p>Passaparola AB - Innehar F-skattesedel</p>
-      <p>
-        <a 
-          href="tel:0721571439" 
-          className="hover:text-gray-300 transition-colors"
-        >
-          Tel: 072-157 14 39
-        </a>
-      </p>
-      <p>
-        <a 
-          href="mailto:boka@sebbedj.se"
-          className="hover:text-gray-300 transition-colors"
-        >
-          boka@sebbedj.se
-        </a>
-      </p>
-    </div>
+    <motion.div 
+      className="space-y-6"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <h3 className="text-xl font-semibold text-white">Företagsinformation</h3>
+      <motion.div variants={itemVariants} className="text-gray-400">
+        <p className="mb-2">Passaparola AB - Innehar F-skattesedel</p>
+        <div className="space-y-3">
+          <a 
+            href="tel:0721571439" 
+            className="flex items-center group hover:text-neon-pink transition-colors"
+          >
+            <FaPhone className="mr-2 group-hover:text-neon-purple" />
+            072-157 14 39
+          </a>
+          <a 
+            href="mailto:boka@sebbedj.se"
+            className="flex items-center group hover:text-neon-pink transition-colors"
+          >
+            <FaEnvelope className="mr-2 group-hover:text-neon-purple" />
+            boka@sebbedj.se
+          </a>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
