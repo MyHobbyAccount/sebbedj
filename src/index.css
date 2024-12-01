@@ -7,7 +7,7 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  background-color: #ffffff;
+  background-color: #0a0a0a;
 }
 
 * {
@@ -21,62 +21,100 @@
   justify-content: center;
 }
 
-/* Gradient animations */
-.gradient-bg {
-  background: linear-gradient(-45deg, #2a2a2a, #1a1a1a, #000000, #2a2a2a);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+/* Neon Text Effects */
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 5px #fff,
+               0 0 10px #ff00de,
+               0 0 20px #ff00de;
 }
 
-@keyframes gradient {
+.neon-text-blue {
+  color: #fff;
+  text-shadow: 0 0 5px #fff,
+               0 0 10px #00f7ff,
+               0 0 20px #00f7ff;
+}
+
+.neon-box {
+  position: relative;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 5px rgba(255, 0, 222, 0.3),
+              0 0 15px rgba(255, 0, 222, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.neon-button {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border: 2px solid #ff00de;
+  border-radius: 8px;
+  color: #fff;
+  text-shadow: 0 0 5px #ff00de;
+  box-shadow: 0 0 5px rgba(255, 0, 222, 0.3),
+              inset 0 0 5px rgba(255, 0, 222, 0.3);
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  background: rgba(255, 0, 222, 0.1);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 0, 222, 0.4),
+              0 0 20px rgba(255, 0, 222, 0.2);
+}
+
+.neon-gradient {
+  background: linear-gradient(45deg, 
+    rgba(255, 0, 222, 0.05),
+    rgba(0, 247, 255, 0.05));
+}
+
+/* Animated background */
+.animated-bg {
+  background: linear-gradient(45deg,
+    #0a0a0a,
+    #1a1a1a,
+    #2a2a2a,
+    #1a1a1a,
+    #0a0a0a);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Card hover effects */
-.service-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Glow effect for images */
+.glow-image {
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(255, 0, 222, 0.3),
+              0 0 20px rgba(255, 0, 222, 0.1);
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-}
-
-/* Button animations */
-.animate-button {
+/* Neon border animation */
+.neon-border {
   position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
 }
 
-.animate-button::after {
+.neon-border::before {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, rgba(255, 0, 222, 0.3), rgba(0, 247, 255, 0.3));
+  z-index: -1;
+  animation: borderGlow 3s ease-in-out infinite;
 }
 
-.animate-button:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* Testimonial card styling */
-.testimonial-card {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: scale(1.02);
+@keyframes borderGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.3; }
 }
