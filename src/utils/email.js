@@ -1,25 +1,46 @@
 import emailjs from '@emailjs/browser';
 import { handleGlobalError } from './errorHandling';
+import { EMAIL_CONFIG } from '../config/email';
 
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const getEmailConfig = () => {
+  const config = {
+    serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+  };
 
-export const sendEmail = async (formData) => {
-  if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-    console.error('EmailJS configuration is missing');
-    return { success: false, error: 'Email service not configured' };
+  if (!config.serviceId || !config.templateId || !config.publicKey) {
+    throw new Error('Please configure EmailJS environment variables');
   }
 
+  return config;
+};
+
+export const sendEmail = async (formData) => {
   try {
+    const { serviceId, templateId, publicKey } = getEmailConfig();
+    
+    const emailData = {
+      ...formData,
+      to_email: EMAIL_CONFIG.recipient,
+      subject: formData.service 
+        ? EMAIL_CONFIG.templates.booking.subject 
+        : EMAIL_CONFIG.templates.contact.subject,
+      reply_to: formData.email
+    };
+
     const response = await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID,
-      formData,
-      EMAILJS_PUBLIC_KEY
+      serviceId,
+      templateId,
+      emailData,
+      publicKey
     );
     return { success: true, response };
   } catch (error) {
-    return handleGlobalError(error);
+    const errorMessage = error.message.includes('configure EmailJS')
+      ? 'Email service not configured. Please contact the administrator.'
+      : 'An error occurred while sending the email. Please try again.';
+    
+    return handleGlobalError(error, errorMessage);
   }
 };
