@@ -1,10 +1,9 @@
 // Global error handler for unexpected errors
-export const handleGlobalError = (error) => {
+export const handleGlobalError = (error, customMessage = null) => {
   console.error('An error occurred:', error);
-  // Implement proper error logging here
   return {
     success: false,
-    message: 'An unexpected error occurred. Please try again.'
+    message: customMessage || 'An unexpected error occurred. Please try again.'
   };
 };
 
