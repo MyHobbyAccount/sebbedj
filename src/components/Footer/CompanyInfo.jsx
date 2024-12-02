@@ -32,7 +32,10 @@ const CompanyInfo = () => {
     >
       <h3 className="text-xl font-semibold text-white">Företagsinformation</h3>
       <motion.div variants={itemVariants} className="text-gray-400">
-        <p className="mb-2">Passaparola AB - Innehar F-skattesedel</p>
+        <p className="mb-2">
+          <span>Passaparola AB</span>
+          <span className="text-gray-500 text-sm ml-1">- Innehar F-skattesedel</span>
+        </p>
         <div className="space-y-3">
           <a 
             href="tel:0721571439" 
