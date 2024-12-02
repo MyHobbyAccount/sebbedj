@@ -1,11 +1,13 @@
 import React from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { Transition } from '@headlessui/react';
 import ContactInput from './ContactInput';
 import ContactTextArea from './ContactTextArea';
 import { useContactForm } from '../../hooks/useContactForm';
+import { RECAPTCHA_CONFIG } from '../../config/recaptcha';
 
 const ContactPopup = ({ isOpen, onClose, service }) => {
-  const { handleSubmit } = useContactForm();
+  const { handleSubmit, setRecaptchaValue } = useContactForm();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -64,6 +66,12 @@ const ContactPopup = ({ isOpen, onClose, service }) => {
               label="Meddelande"
               rows={4}
             />
+            <div className="flex justify-center mb-4">
+              <ReCAPTCHA
+                sitekey={RECAPTCHA_CONFIG.siteKey}
+                onChange={setRecaptchaValue}
+              />
+            </div>
             <div className="flex justify-end space-x-4">
               <button
                 type="button"
