@@ -6,6 +6,7 @@ import Services from './components/Services';
 import Testimonials from './components/Testimonials';
 import { ContactForm } from './components/Contact';
 import Venues from './components/Venues';
+import FAQ from './components/FAQ';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
         </ErrorBoundary>
         <ErrorBoundary>
           <Testimonials />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <FAQ />
         </ErrorBoundary>
         <ErrorBoundary>
           <ContactForm />
