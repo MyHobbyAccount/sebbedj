@@ -67,10 +67,13 @@ const ContactPopup = ({ isOpen, onClose, service }) => {
               rows={4}
             />
             <div className="flex justify-center mb-4">
-              <ReCAPTCHA
-                sitekey={RECAPTCHA_CONFIG.siteKey}
-                onChange={setRecaptchaValue}
-              />
+              {RECAPTCHA_CONFIG.siteKey && (
+                <ReCAPTCHA
+                  sitekey={RECAPTCHA_CONFIG.siteKey}
+                  onChange={setRecaptchaValue}
+                  theme={RECAPTCHA_CONFIG.theme}
+                />
+              )}
             </div>
             <div className="flex justify-end space-x-4">
               <button
