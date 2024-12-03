@@ -4,7 +4,7 @@ import HeroButton from './HeroButton';
 
 const Hero = () => {
   return (
-    <section className="section-height animated-bg relative">
+    <section className="hero-section animated-bg relative">
       <div className="absolute inset-0 neon-gradient"></div>
       <div className="container mx-auto px-4 py-16 relative z-10">
         <HeroTitle />
