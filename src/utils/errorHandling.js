@@ -1,4 +1,3 @@
-// Global error handler for unexpected errors
 export const handleGlobalError = (error, customMessage = null) => {
   console.error('An error occurred:', error);
   return {
@@ -7,18 +6,18 @@ export const handleGlobalError = (error, customMessage = null) => {
   };
 };
 
-// Utility to validate environment variables
 export const validateEnvVariables = () => {
   const required = [
     'VITE_EMAILJS_SERVICE_ID',
     'VITE_EMAILJS_TEMPLATE_ID',
-    'VITE_EMAILJS_PUBLIC_KEY'
+    'VITE_EMAILJS_PUBLIC_KEY',
+    'VITE_RECAPTCHA_SITE_KEY'
   ];
   
   const missing = required.filter(key => !import.meta.env[key]);
   
   if (missing.length > 0) {
-    console.warn('Missing environment variables:', missing);
+    console.warn('Missing environment variables:', missing.join(', '));
     return false;
   }
   
