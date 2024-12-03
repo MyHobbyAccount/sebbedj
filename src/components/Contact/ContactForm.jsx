@@ -1,9 +1,9 @@
 import React from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useContactForm } from '../../hooks/useContactForm';
+import { RECAPTCHA_CONFIG } from '../../config/recaptcha';
 import ContactInput from './ContactInput';
 import ContactTextArea from './ContactTextArea';
-import { RECAPTCHA_CONFIG } from '../../config/recaptcha';
 
 const ContactForm = () => {
   const { handleSubmit, setRecaptchaValue } = useContactForm();
@@ -39,10 +39,13 @@ const ContactForm = () => {
               rows={6}
             />
             <div className="flex justify-center mb-6">
-              <ReCAPTCHA
-                sitekey={RECAPTCHA_CONFIG.siteKey}
-                onChange={setRecaptchaValue}
-              />
+              {RECAPTCHA_CONFIG.siteKey && (
+                <ReCAPTCHA
+                  sitekey={RECAPTCHA_CONFIG.siteKey}
+                  onChange={setRecaptchaValue}
+                  theme={RECAPTCHA_CONFIG.theme}
+                />
+              )}
             </div>
             <div className="text-center">
               <button
