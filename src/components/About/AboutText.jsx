@@ -3,8 +3,14 @@ import { motion } from 'framer-motion';
 
 const AboutText = () => {
   const paragraphs = [
-    `Välkommen till en värld där musiken sätter stämningen och varje fest blir unik! Jag är sebbedj – en engagerad och erfaren underhållare som brinner för att skapa oförglömliga stunder på dansgolvet. Jag utgår några mil söder om Växjö och kan enkelt ta mig runt i södra Sverige.`,
-    `Med en naturlig känsla för att läsa av publiken och en bred musikalisk repertoar levererar jag precis det som behövs för att din kväll ska bli magisk. Oavsett om det handlar om att sätta takten på ett bröllop, arrangera ett skräddarsytt musikquiz, eller skapa en kväll full av energi och glädje, så är mitt mål att ge dig och dina gäster en upplevelse ni sent kommer glömma.`
+    {
+      text: `Välkommen till en värld där musiken sätter stämningen och varje fest blir unik! Jag är sebbedj – en engagerad, underhållande och erfaren DJ som brinner för att skapa oförglömliga stunder på dansgolvet. Mina spelningar är oftast personliga och jag upplevs som en del av festen. Jag utgår några mil söder om Växjö och kan enkelt ta mig runt i södra Sverige.`,
+      keywords: ['DJ', 'Växjö', 'södra Sverige', 'fest', 'underhållning']
+    },
+    {
+      text: `Med en naturlig känsla för att läsa av publiken och en bred musikalisk repertoar levererar jag precis det som behövs för att din kväll ska bli magisk. Oavsett om det handlar om att sätta takten på ett bröllop, arrangera ett underhållande musikquiz, eller skapa en kväll full av energi och glädje, så är mitt mål att ge dig och dina gäster en upplevelse ni sent kommer glömma.`,
+      keywords: ['bröllop', 'musikquiz', 'DJ-tjänster', 'underhållning']
+    }
   ];
 
   const containerVariants = {
@@ -26,24 +32,56 @@ const AboutText = () => {
     }
   };
 
+  // Structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "sebbedj",
+    "description": "Professionell DJ-tjänst för bröllop, fester och events i södra Sverige",
+    "areaServed": "Södra Sverige",
+    "serviceType": "DJ Services",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Växjö",
+      "addressCountry": "SE"
+    }
+  };
+
   return (
-    <motion.div 
+    <motion.article 
       className="space-y-6"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
-      {paragraphs.map((text, index) => (
-        <motion.p 
-          key={index} 
-          className="text-white opacity-90 leading-relaxed"
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+      
+      {paragraphs.map((paragraph, index) => (
+        <motion.div 
+          key={index}
           variants={itemVariants}
         >
-          {text}
-        </motion.p>
+          <p 
+            className="text-white opacity-90 leading-relaxed"
+            itemProp="description"
+          >
+            {paragraph.text}
+          </p>
+          <meta name="keywords" content={paragraph.keywords.join(', ')} />
+        </motion.div>
       ))}
-    </motion.div>
+      
+      {/* Hidden semantic elements for SEO */}
+      <div className="hidden">
+        <h2 itemProp="name">sebbedj - Professionell DJ i Södra Sverige</h2>
+        <p itemProp="serviceArea">Växjö och södra Sverige</p>
+        <p itemProp="serviceType">DJ-tjänster för bröllop, fester och events</p>
+      </div>
+    </motion.article>
   );
 };
 
