@@ -19,7 +19,7 @@ const AboutImage = () => {
           playsInline
           className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
         >
-          <source src="/media/videos/sebbedj partyfilm.mp4" type="video/mp4" />
+          <source src="/media/video/sebbedj partyfilm.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
