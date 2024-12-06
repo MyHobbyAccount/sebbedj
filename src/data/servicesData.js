@@ -4,6 +4,7 @@ export const servicesData = [
     price: "10,000 SEK inkl moms",
     features: [
       "DJ enbart under bröllopsfesten",
+      "Upp till 120 personer",
       "Danslokalen är i ett separat rum än middagen",
       "Ljudsystem i världsklass, Yamaha",
       "Disco kula & effektbelysning",
@@ -17,6 +18,7 @@ export const servicesData = [
     price: "13,000 SEK inkl moms",
     features: [
       "DJ enbart under bröllopsfesten",
+      "upp till 120 personer",
       "Bröllopsfesten är i samma lokal som middagen",
       "Ljudsystem i världsklass, Yamaha",
       "Disco kula & effektbelysning",
@@ -31,6 +33,7 @@ export const servicesData = [
     features: [
       "DJ hela kvällen",
       "Ljudsystem i världsklass",
+      "upp till 120 personer",
       "Disco kula & effektbelysning",
       "Moving heads & miljöbelysning",
       "Möjlighet till musikquiz som förfest",
@@ -56,7 +59,7 @@ export const servicesData = [
     price: "5,000 SEK inkl moms",
     features: [
       "1 timma interaktivt musikquiz",
-      "Professionellt ljudsystem",
+      "Ljudsystem samt bildteknik tillkommer",
       "Underhållande kategorier",
       "Jag använder mig av befintlig TV-skärm"
     ],
