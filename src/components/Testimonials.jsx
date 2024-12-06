@@ -23,7 +23,7 @@ const Testimonials = () => {
       items: [
         {
           text: "Perfekt musikval som fick alla att dansa hela kvällen!",
-          event: "Jubileumsfest",
+          event: "Privatfest",
           date: "November 2023"
         },
         {
