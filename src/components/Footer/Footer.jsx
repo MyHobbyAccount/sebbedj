@@ -1,6 +1,7 @@
 import React from 'react';
 import CompanyInfo from './CompanyInfo';
 import SocialLinks from './SocialLinks';
+import BookingInfo from './BookingInfo';
 import Copyright from './Copyright';
 
 const Footer = () => {
@@ -8,12 +9,15 @@ const Footer = () => {
     <footer className="bg-gradient-dark py-16 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="glass p-8 rounded-lg">
               <CompanyInfo />
             </div>
             <div className="glass p-8 rounded-lg">
               <SocialLinks />
+            </div>
+            <div className="glass p-8 rounded-lg">
+              <BookingInfo />
             </div>
           </div>
           <Copyright />
