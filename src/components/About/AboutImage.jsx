@@ -5,7 +5,6 @@ const AboutImage = () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    // Ensure video plays when loaded
     if (videoRef.current) {
       videoRef.current.play().catch(error => {
         console.log("Video autoplay failed:", error);
