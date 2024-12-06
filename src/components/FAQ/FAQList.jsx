@@ -4,7 +4,7 @@ import { faqData } from '../../data/faqData';
 
 const FAQList = () => {
   return (
-    <div className="max-w-2xl mx-auto space-y-2">
+    <div className="space-y-2">
       {faqData.map((faq, index) => (
         <FAQItem
           key={index}
