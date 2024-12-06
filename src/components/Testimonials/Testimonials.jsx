@@ -13,7 +13,7 @@ const Testimonials = () => {
     },
     {
       text: "Perfekt musikval som fick alla att dansa hela kvällen!",
-      event: "Jubileumsfest"
+      event: "Privatfest"
     },
     {
       text: "En kväll vi sent kommer glömma, tack för en magisk upplevelse!",
