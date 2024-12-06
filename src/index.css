@@ -151,3 +151,13 @@
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
+
+/* Modal styles */
+.modal-open {
+  overflow: hidden;
+}
+
+/* Ensure modals are always on top */
+.modal-overlay {
+  z-index: 1000;
+}
