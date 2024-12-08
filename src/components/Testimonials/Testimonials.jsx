@@ -1,25 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { testimonialsData } from '../../data/testimonialsData';
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      text: "Lyhörd och ett öga för vad som uppskattades på dansgolvet. Fullt ös hela kvällen och riktigt maxat!",
-      event: "Bröllopsfest"
-    },
-    {
-      text: "Fantastisk stämning och professionellt bemötande från början till slut!",
-      event: "Företagsevent"
-    },
-    {
-      text: "Perfekt musikval som fick alla att dansa hela kvällen!",
-      event: "Privatfest"
-    },
-    {
-      text: "En kväll vi sent kommer glömma, tack för en magisk upplevelse!",
-      event: "Bröllopsfest"
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
     }
-  ];
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
 
   return (
     <section className="section-height animated-bg py-20">
@@ -28,7 +29,7 @@ const Testimonials = () => {
           Vad Andra Säger
         </h2>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          {testimonials.map((testimonial, index) => (
+          {testimonialsData.map((testimonial, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
